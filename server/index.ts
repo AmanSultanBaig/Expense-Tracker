@@ -1,16 +1,14 @@
 import express from "express";
 import dotenv from "dotenv";
-
+import userController from "./controllers/user-controller";
 import dbConnection from "./config/connection";
-
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+app.use(express.json());
+app.use("/api/v1", userController);
 
 const startApplication = async () => {
   await dbConnection;
