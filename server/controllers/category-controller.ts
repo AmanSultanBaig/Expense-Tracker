@@ -12,7 +12,7 @@ router.post("/create-category", async (req, res) => {
   }
 });
 
-router.get("/list-category", async (req, res) => {
+router.get("/list-category", async (req: any, res) => {
   try {
     const _categoryService = new categoryService();
     const response = await _categoryService.fetchCategory();

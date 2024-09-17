@@ -32,6 +32,7 @@ class userService {
     }
 
     const data = {
+        id: user._id,
         name: user.full_name,
         email: user.email,
         verified: user.verified,
