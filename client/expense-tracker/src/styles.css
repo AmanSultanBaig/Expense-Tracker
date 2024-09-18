@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+/* Apply a global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/assets/images/bg.jpg"); /* Path relative to `src/assets` */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  margin: 0;
+  padding: 0;
+}
