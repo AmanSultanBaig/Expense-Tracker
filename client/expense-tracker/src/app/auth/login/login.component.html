@@ -1,47 +1,80 @@
+<p-toast></p-toast>
 <div class="login-wrap">
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="user" class="label">Email</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				
-				<div class="group">
-					<input type="submit" class="button" value="Sign In">
-				</div>
-			</div>
-			<div class="sign-up-htm">
-				<div class="group">
-					<label for="user" class="label">First Name</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="user" class="label">Last Name</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="user" class="label">Emaile</label>
-					<input id="user" type="text" class="input">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" data-type="password">
-				</div>
-				<div class="group">
-					<input type="submit" class="button" value="Sign Up">
-				</div>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</label>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label
+      for="tab-1"
+      class="tab"
+      >Sign In</label
+    >
+    <input id="tab-2" type="radio" name="tab" class="sign-up" /><label
+      for="tab-2"
+      class="tab"
+      >Sign Up</label
+    >
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">Email</label>
+          <input
+            id="user"
+            [(ngModel)]="loginData.email"
+            type="email"
+            placeholder="Email"
+            class="input"
+          />
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input
+            id="pass"
+            [(ngModel)]="loginData.password"
+            type="password"
+            placeholder="Password"
+            class="input"
+            data-type="password"
+          />
+        </div>
+
+        <div class="group">
+          <button (click)="login()" class="button" value="Sign In">
+            Sign In
+          </button>
+        </div>
+      </div>
+      <div class="sign-up-htm">
+        <div class="group">
+          <label for="user" class="label">First Name</label>
+          <input id="user" type="text" [(ngModel)]="registerData.first_name" placeholder="First Name" class="input" />
+        </div>
+        <div class="group">
+          <label for="user" class="label">Last Name</label>
+          <input id="user" type="text" [(ngModel)]="registerData.last_name" placeholder="Last Name" class="input" />
+        </div>
+        <div class="group">
+          <label for="user" class="label">Email</label>
+          <input id="user" type="email" [(ngModel)]="registerData.email" placeholder="Email" class="input" />
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input
+            id="pass"
+            type="password"
+            [(ngModel)]="registerData.password"
+            placeholder="Password"
+            class="input"
+            data-type="password"
+          />
+        </div>
+        <div class="group">
+          <button (click)="register()" class="button" value="Sign Up">
+            Sign Up
+          </button>
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</label>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
