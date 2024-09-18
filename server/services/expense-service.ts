@@ -15,7 +15,8 @@ class ExpenseService {
 
   async updateExpense(data: any, id: string) {
     const objectId = new ObjectId(id);
-    await expenseModel.updateOne({ _id: objectId }, data);
+    const updateDoc = { $set: data };
+    await expenseModel.updateOne({ _id: objectId }, updateDoc);
     return { message: "expense updated successfully!", status: 200 };
   }
 

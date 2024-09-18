@@ -28,9 +28,9 @@ router.post("/list-expense", async (req: any, res) => {
 
 router.put("/update-expense", async (req: any, res) => {
   try {
-    const { id, data } = req.body;
+    const { id } = req.body;
     const _expenseService = new expenseService();
-    const response = await _expenseService.updateExpense(data, id);
+    const response = await _expenseService.updateExpense(req.body, id);
     res.status(response.status || 500).json({ message: response.message });
   } catch (error) {
     console.log(error);
