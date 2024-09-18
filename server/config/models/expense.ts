@@ -24,6 +24,10 @@ const expenseSchema = new mongoose.Schema(
       required: true,
       default: Date.now,
     },
+    year_month: {
+        type: Number,
+        required: true
+    },
     expense: {
       type: Number,
       required: true,
