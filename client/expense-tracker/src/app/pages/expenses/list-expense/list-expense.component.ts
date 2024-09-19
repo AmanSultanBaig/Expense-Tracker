@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   providers: [ApiService],
 })
 export class ListExpenseComponent implements OnInit {
-  expenses: any = [{}, {}, {}];
+  expenses: any = [];
   loggedInUser: any = {};
   isCardView: boolean = true;
   title: string = '';

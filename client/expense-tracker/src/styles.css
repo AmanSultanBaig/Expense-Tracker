@@ -33,3 +33,8 @@ body {
 .theme-color {
   color: #ed1f3b !important;
 }
+
+.border-line {
+  border: solid 2px  #f60525 !important;
+  width: 100% !important;
+}

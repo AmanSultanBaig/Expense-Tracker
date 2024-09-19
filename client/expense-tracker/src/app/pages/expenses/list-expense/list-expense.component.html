@@ -22,7 +22,7 @@
       </button>
     </div>
   </div>
-  <div class="row mt-2">
+  <div class="row mt-2" *ngIf="expenses.length; else noExpense">
     <div *ngFor="let expense of expenses" [ngClass]="{ 'col-md-3': isCardView, 'col-md-9': !isCardView, 'mt-3': !isCardView }">
       <div class="card">
         <img class="card-img-top" src="..." alt="Card image cap" />
@@ -37,4 +37,11 @@
       </div>
     </div>
   </div>
+<ng-template #noExpense>
+    <hr class="border-line"/>
+    <h2 class="text-white text-center">No Expense Found!</h2>
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="assets/images/no-expense.png" width="400" height="250" />
+    </div>
+</ng-template>
 </div>
