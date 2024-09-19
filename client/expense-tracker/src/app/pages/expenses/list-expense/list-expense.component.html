@@ -1,1 +1,40 @@
-<app-month-bar (monthYearChange)="onMonthYearChange($event)"/>
+<app-month-bar (monthYearChange)="onMonthYearChange($event)" />
+
+<div class="wrapper container mt-5">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h3 class="text-white">{{ title }}</h3>
+    </div>
+    <div>
+      <button
+        (click)="isCardView = false"
+        [ngClass]="{ active: !isCardView }"
+        class="btn btn-primary"
+      >
+        <i class="bi bi-list-stars"></i>
+      </button>
+      <button
+        (click)="isCardView = true"
+        [ngClass]="{ active: isCardView }"
+        class="m-xl-2 btn btn-primary"
+      >
+        <i class="bi bi-card-list"></i>
+      </button>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div [ngClass]="{ 'col-md-3': isCardView, 'col-md-9': !isCardView }">
+      <div class="card">
+        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

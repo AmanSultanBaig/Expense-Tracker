@@ -1,0 +1,12 @@
+.btn-primary {
+  background-color: white !important;
+  color: #000 !important;
+  border-color: white !important;
+}
+
+.active {
+    border-color: #ed1f3b !important;
+    background-color: #ed1f3b !important;
+    color: #fff !important;
+  }
+  

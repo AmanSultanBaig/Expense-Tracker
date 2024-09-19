@@ -34,6 +34,7 @@ export class MonthBarComponent {
 
   @Output() monthYearChange = new EventEmitter<{
     month: string;
+    monthName: string;
     year: number;
   }>();
 
@@ -49,8 +50,8 @@ export class MonthBarComponent {
   }
 
   private emitMonthYearChange() {
-    const selectedMonth =
-      this.months.find((m) => m.value === this.selectedMonth)?.value || '';
-    this.monthYearChange.emit({ month: selectedMonth, year: this.selectedYear });
+    const selectedMonth = this.months.find((m) => m.value === this.selectedMonth)?.value || '';
+    const monthName = this.months.find((m) => m.value === this.selectedMonth)?.name || '';
+    this.monthYearChange.emit({ month: selectedMonth, year: this.selectedYear, monthName });
   }
 }

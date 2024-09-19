@@ -22,6 +22,14 @@ export class ApiService {
     );
   }
 
+  storeLoggedInUser(data: any) {
+    localStorage.setItem('loggedIn-user', JSON.stringify(data));
+  }
+
+  getLoggedInUser() {
+    return JSON.parse(localStorage.getItem('loggedIn-user') || '{}');
+  }
+
   showToast(
     title: string = 'Success!',
     message: string = 'operation done',

@@ -22,11 +22,12 @@ export class LoginComponent {
       next: (res) => {
         this._apiService.showToast(
           'Success!',
-          'Login Successfully!',
+          'Logged In Successfully !',
           'success',
           'Close'
         );
-        this.router.navigate(['/expense-list'])
+        this.router.navigate(['/expense-list']);
+        this._apiService.storeLoggedInUser(res.data);
       },
       error: (error) => {
         const errorMessage = error.message || 'An error occurred during login.';
