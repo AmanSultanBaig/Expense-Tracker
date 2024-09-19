@@ -1,0 +1,53 @@
+<div
+  class="container-fluid vh-100 d-flex justify-content-center align-items-center"
+>
+  <div class="card shadow-sm p-4 border-0 rounded" style="width: 350px">
+    <h4 class="text-center mb-4">Register</h4>
+    <div class="form-group mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input
+        type="text"
+        [(ngModel)]="registerData.first_name"
+        class="form-control form-control-lg"
+        placeholder="First Name"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input
+        type="text"
+        [(ngModel)]="registerData.last_name"
+        class="form-control form-control-lg"
+        placeholder="Last Name"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        [(ngModel)]="registerData.email"
+        class="form-control form-control-lg"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="registerData.password"
+        class="form-control form-control-lg"
+        placeholder="Password"
+      />
+    </div>
+    <button
+      type="button"
+      (click)="register()"
+      class="btn btn-primary w-100 btn-lg"
+    >
+      Register
+    </button>
+    <div class="form-check mt-3 text-center">
+      <a class="form-check-label" routerLink="/login">Already Member! Sign in</a>
+    </div>
+  </div>
+</div>

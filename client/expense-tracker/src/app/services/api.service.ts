@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -10,17 +11,28 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  register(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${endpoint}`, data);
-  }
-
-  login(endpoint: string, data: any): Observable<any> {
+  create(endpoint: string, data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/${endpoint}`, data).pipe(
-      catchError(error => {
+      catchError((error) => {
         console.error('Error occurred:', error);
-        return throwError(() => new Error(error.error.message || 'An unknown error occurred'));
+        return throwError(
+          () => new Error(error.error.message || 'An unknown error occurred')
+        );
       })
     );
   }
 
+  showToast(
+    title: string = 'Success!',
+    message: string = 'operation done',
+    icon: SweetAlertIcon = 'success',
+    buttonText: string = 'OK'
+  ) {
+    Swal.fire({
+      title: title,
+      text: message,
+      icon: icon,
+      confirmButtonText: buttonText,
+    });
+  }
 }

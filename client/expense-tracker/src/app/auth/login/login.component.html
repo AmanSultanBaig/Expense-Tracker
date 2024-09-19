@@ -1,80 +1,37 @@
-<p-toast></p-toast>
-<div class="login-wrap">
-  <div class="login-html">
-    <input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label
-      for="tab-1"
-      class="tab"
-      >Sign In</label
+<div
+  class="container-fluid vh-100 d-flex justify-content-center align-items-center"
+>
+  <div class="card shadow-sm p-4 border-0 rounded" style="width: 350px">
+    <h4 class="text-center mb-4">Login</h4>
+    <div class="form-group mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        [(ngModel)]="loginData.email"
+        class="form-control form-control-lg"
+        placeholder="Enter email"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input
+        type="password"
+        [(ngModel)]="loginData.password"
+        class="form-control form-control-lg"
+        placeholder="Password"
+      />
+    </div>
+    <button
+      type="button"
+      (click)="login()"
+      class="btn btn-primary w-100 btn-lg"
     >
-    <input id="tab-2" type="radio" name="tab" class="sign-up" /><label
-      for="tab-2"
-      class="tab"
-      >Sign Up</label
-    >
-    <div class="login-form">
-      <div class="sign-in-htm">
-        <div class="group">
-          <label for="user" class="label">Email</label>
-          <input
-            id="user"
-            [(ngModel)]="loginData.email"
-            type="email"
-            placeholder="Email"
-            class="input"
-          />
-        </div>
-        <div class="group">
-          <label for="pass" class="label">Password</label>
-          <input
-            id="pass"
-            [(ngModel)]="loginData.password"
-            type="password"
-            placeholder="Password"
-            class="input"
-            data-type="password"
-          />
-        </div>
-
-        <div class="group">
-          <button (click)="login()" class="button" value="Sign In">
-            Sign In
-          </button>
-        </div>
-      </div>
-      <div class="sign-up-htm">
-        <div class="group">
-          <label for="user" class="label">First Name</label>
-          <input id="user" type="text" [(ngModel)]="registerData.first_name" placeholder="First Name" class="input" />
-        </div>
-        <div class="group">
-          <label for="user" class="label">Last Name</label>
-          <input id="user" type="text" [(ngModel)]="registerData.last_name" placeholder="Last Name" class="input" />
-        </div>
-        <div class="group">
-          <label for="user" class="label">Email</label>
-          <input id="user" type="email" [(ngModel)]="registerData.email" placeholder="Email" class="input" />
-        </div>
-        <div class="group">
-          <label for="pass" class="label">Password</label>
-          <input
-            id="pass"
-            type="password"
-            [(ngModel)]="registerData.password"
-            placeholder="Password"
-            class="input"
-            data-type="password"
-          />
-        </div>
-        <div class="group">
-          <button (click)="register()" class="button" value="Sign Up">
-            Sign Up
-          </button>
-        </div>
-        <div class="hr"></div>
-        <div class="foot-lnk">
-          <label for="tab-1">Already Member?</label>
-        </div>
-      </div>
+      Login
+    </button>
+    <div class="form-check mt-3">
+      <a class="form-check-label" routerLink="/register"
+        >Don't have an account! Sign up</a
+      >
     </div>
   </div>
 </div>
