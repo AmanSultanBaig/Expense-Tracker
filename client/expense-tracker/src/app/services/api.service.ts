@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
 
@@ -11,8 +11,15 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  create(endpoint: string, data: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${endpoint}`, data).pipe(
+  create(endpoint: string, data: any, token?: string): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    let bearerHeader = {};
+
+    if(token) {
+      bearerHeader = { headers }
+    }
+
+    return this.http.post(`${this.apiUrl}/${endpoint}`, data, bearerHeader).pipe(
       catchError((error) => {
         console.error('Error occurred:', error);
         return throwError(

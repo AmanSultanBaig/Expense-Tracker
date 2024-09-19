@@ -10,3 +10,20 @@
     color: #fff !important;
   }
   
+.chip {
+  background-color: #ed1f3b;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 100px;
+  padding: 5px;
+  width: 110px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 250px;
+}

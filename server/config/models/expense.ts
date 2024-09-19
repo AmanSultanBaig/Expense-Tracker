@@ -28,7 +28,7 @@ const expenseSchema = new mongoose.Schema(
         type: Number,
         required: true
     },
-    expense: {
+    expend: {
       type: Number,
       required: true,
     },
