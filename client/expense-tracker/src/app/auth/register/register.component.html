@@ -42,6 +42,7 @@
     <button
       type="button"
       (click)="register()"
+      [disabled]="!registerData.first_name || !registerData.last_name || !registerData.email || !registerData.password"
       class="btn btn-primary w-100 btn-lg"
     >
       Register

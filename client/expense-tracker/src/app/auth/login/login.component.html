@@ -24,6 +24,7 @@
     <button
       type="button"
       (click)="login()"
+      [disabled]="!loginData.password || !loginData.email"
       class="btn btn-primary w-100 btn-lg"
     >
       Login
