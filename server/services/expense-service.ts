@@ -9,7 +9,7 @@ class ExpenseService {
 
   async fetchExpense(user_id: string, year_month: Number) {
     let userId = new ObjectId(user_id);
-    const data = await expenseModel.find({ user_id: userId, year_month });
+    const data = await expenseModel.find({ user_id: userId, year_month }).populate("category_id");
     return { message: "expense fetched", status: 200, data };
   }
 
