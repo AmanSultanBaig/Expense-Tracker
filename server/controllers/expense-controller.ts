@@ -17,9 +17,8 @@ router.post("/list-expense", async (req: any, res) => {
   try {
     const { date } = req.body;
     const user_id = req.user.id;
-    const year_month = Number(moment(date).format("YYYYMM"));
     const _expenseService = new expenseService();
-    const response = await _expenseService.fetchExpense(user_id, year_month);
+    const response = await _expenseService.fetchExpense(user_id, date);
     res.status(response.status || 500).json({ message: response.message, data: response.data });
   } catch (error) {
     console.log(error);
