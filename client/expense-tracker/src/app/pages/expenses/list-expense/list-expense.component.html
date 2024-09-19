@@ -22,8 +22,8 @@
       </button>
     </div>
   </div>
-  <div class="row mt-5">
-    <div [ngClass]="{ 'col-md-3': isCardView, 'col-md-9': !isCardView }">
+  <div class="row mt-2">
+    <div *ngFor="let expense of expenses" [ngClass]="{ 'col-md-3': isCardView, 'col-md-9': !isCardView, 'mt-3': !isCardView }">
       <div class="card">
         <img class="card-img-top" src="..." alt="Card image cap" />
         <div class="card-body">
