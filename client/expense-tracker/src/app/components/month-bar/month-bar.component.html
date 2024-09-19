@@ -1,17 +1,15 @@
-<div class="main row d-flex justify-content-center">
+<div class="main row">
   <div class="col-md-10">
     <div class="month-bar">
       <button
         *ngFor="let month of months"
         class="btn btn-light month-btn"
-        [ngClass]="{ active: month === selectedMonth }"
-        (click)="onMonthChange(month)"
+        [ngClass]="{ active: month.value === selectedMonth }"
+        (click)="onMonthChange(month.value)"
       >
-        {{ month }}
+        {{ month.name }}
       </button>
     </div>
-
-    
   </div>
   <div class="col-md-2">
     <select class="form-select" (change)="onYearChange($event)">
