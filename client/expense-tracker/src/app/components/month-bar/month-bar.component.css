@@ -1,0 +1,21 @@
+.month-btn {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+.month-btn.active {
+  background-color: #ed1f3b;
+  color: #fff;
+}
+
+.month-btn:hover {
+  background-color: #ed1f3b;
+}
+
+.main {
+    margin: 0px !important;
+    padding: 0px !important;
+}

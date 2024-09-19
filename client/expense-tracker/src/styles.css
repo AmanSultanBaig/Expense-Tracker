@@ -15,3 +15,12 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.btn-primary {
+  border-color: #ed1f3b !important;
+  background-color: #ed1f3b !important;
+}
+
+.theme-color {
+  color: #ed1f3b !important;
+}

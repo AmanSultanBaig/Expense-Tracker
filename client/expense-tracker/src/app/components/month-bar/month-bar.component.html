@@ -1,0 +1,27 @@
+<div class="main row d-flex justify-content-center">
+  <div class="col-md-10">
+    <div class="month-bar">
+      <button
+        *ngFor="let month of months"
+        class="btn btn-light month-btn"
+        [ngClass]="{ active: month === selectedMonth }"
+        (click)="onMonthChange(month)"
+      >
+        {{ month }}
+      </button>
+    </div>
+
+    
+  </div>
+  <div class="col-md-2">
+    <select class="form-select" (change)="onYearChange($event)">
+      <option
+        *ngFor="let year of years"
+        [value]="year"
+        [selected]="year === selectedYear"
+      >
+        {{ year }}
+      </option>
+    </select>
+  </div>
+</div>
