@@ -1,0 +1,17 @@
+<nav class="navbar mb-2">
+    <ul class="nav-links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+
+    <div class="profile-menu">
+        <h6 class="loggedInProfile">{{userName | uppercase}}</h6>
+        <div class="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+</nav>
