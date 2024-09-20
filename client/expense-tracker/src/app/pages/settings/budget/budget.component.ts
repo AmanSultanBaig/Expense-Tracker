@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-budget',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './budget.component.html',
   styleUrl: './budget.component.css',
 })
@@ -16,5 +17,9 @@ export class BudgetComponent {
 
   @Input() set title(value: string) {
     this._title = value;
+  }
+
+  saveBudget() {
+    console.log(this.data)
   }
 }

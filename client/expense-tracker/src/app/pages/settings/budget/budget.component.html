@@ -1,16 +1,14 @@
 <div class="container">
     <h3 class="text-white mt-3">Budget of {{_title}}</h3>
-    <form class="row">
-        <div class="form-group col-md-4">
-            <label for="firstName">First Name</label>
-            <input type="number" class="form-control" id="firstName" placeholder="Enter Budget" required>
+    <form class="row mt-3">
+        <div class="form-group col-md-3">
+            <input type="number" name="budget" [(ngModel)]="data.budget" class="form-control" placeholder="Enter Budget" required />
         </div>
-        <div class="form-group col-md-4">
-            <label for="lastName">Last Name</label>
-            <input type="number" class="form-control" id="lastName" placeholder="Enter Saving" required>
+        <div class="form-group col-md-3">
+            <input type="number" name="saving" [(ngModel)]="data.saving" class="form-control" placeholder="Enter Saving" required />
         </div>
         <div class="col-md-3">
-            <button class="btn mt-4 w-50 btn-primary btn-sm">Save Budget</button>
+            <button (click)="saveBudget()" class="btn w-50 btn-primary btn-sm">Save Budget</button>
         </div>
     </form>
 </div>
