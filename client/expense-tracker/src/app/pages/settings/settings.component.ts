@@ -13,7 +13,7 @@ import { CreateExpenseComponent } from './create-expense/create-expense.componen
 })
 export class SettingsComponent implements OnInit {
   title = '';
-
+  year_month?: number;
   ngOnInit() {
     const currentMonth = moment().format('MMMM');
     const currentYear = moment().format('YYYY');
@@ -22,5 +22,6 @@ export class SettingsComponent implements OnInit {
 
   onMonthYearChange(event: { month: string; monthName: string; year: number }) {
     this.title = `${event.monthName}-${event.year}`;
+    this.year_month = Number(event.year + event.month);
   }
 }
