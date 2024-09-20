@@ -35,7 +35,12 @@
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
             <h5 class="card-title">{{expense.title | titlecase}}</h5>
-            <span class="chip">{{expense.category_id.category_name | uppercase}}</span>
+            <div>
+              <span class="chip">{{expense.category_id.category_name | uppercase}}</span>
+              <button class="delete-btn btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmationDialog">
+                <i class="text-white bi bi-trash"></i>
+              </button>
+            </div>
           </div>
           <p class="card-text" [ngClass]="{'ellipsis': isCardView}">{{expense.description}}</p>
           <div class="d-flex justify-content-between">
@@ -58,4 +63,22 @@
       <img src="assets/images/no-expense.png" width="400" height="250" />
     </div>
   </ng-template>
+</div>
+
+<div class="modal fade" id="confirmationDialog" tabindex="-1" role="dialog" aria-labelledby="confirmationDialogLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="confirmationDialogLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this expense?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -57,3 +57,9 @@
   scrollbar-color: #ed1f3b #f1f1f1; /* Handle color and track color */
   scrollbar-width: thin; /* Makes the scrollbar thinner */
 }
+
+.delete-btn{
+  background-color: #ed1f3b !important;
+  border-color: #fff !important;
+  margin-left: 1rem !important;
+}
