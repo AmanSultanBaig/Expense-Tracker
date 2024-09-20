@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import moment from 'moment';
 import { MonthBarComponent } from 'src/app/components/month-bar/month-bar.component';
 import { BudgetComponent } from './budget/budget.component';
 import { CreateExpenseComponent } from './create-expense/create-expense.component';
@@ -8,8 +9,18 @@ import { CreateExpenseComponent } from './create-expense/create-expense.componen
   standalone: true,
   imports: [BudgetComponent, CreateExpenseComponent, MonthBarComponent],
   templateUrl: './settings.component.html',
-  styleUrl: './settings.component.css'
+  styleUrl: './settings.component.css',
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnInit {
+  title = '';
 
+  ngOnInit() {
+    const currentMonth = moment().format('MMMM');
+    const currentYear = moment().format('YYYY');
+    this.title = `${currentMonth}-${currentYear}`;
+  }
+
+  onMonthYearChange(event: { month: string; monthName: string; year: number }) {
+    this.title = `${event.monthName}-${event.year}`;
+  }
 }

@@ -1,33 +1,20 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-budget',
   standalone: true,
-  imports: [
-    FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    CommonModule
-],
+  imports: [],
   templateUrl: './budget.component.html',
-  styleUrl: './budget.component.css'
+  styleUrl: './budget.component.css',
 })
 export class BudgetComponent {
-  firstName: string = '';
-  lastName: string = '';
-  selectedDate: Date | null = null;
+  _title: string = '';
+  data: any = {
+    budget: 0,
+    saving: 0,
+  };
 
-  onSubmit() {
-    console.log('First Name:', this.firstName);
-    console.log('Last Name:', this.lastName);
-    console.log('Selected Date:', this.selectedDate);
+  @Input() set title(value: string) {
+    this._title = value;
   }
 }

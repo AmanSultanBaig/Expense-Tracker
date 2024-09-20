@@ -1,33 +1,16 @@
-<div class="container mt-5">
-    <h2>Simple Form</h2>
-    <form (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="fill">
-            <mat-label>First Name</mat-label>
-            <input matInput [(ngModel)]="firstName" name="firstName" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Last Name</mat-label>
-            <input matInput [(ngModel)]="lastName" name="lastName" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Select Date</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" name="date" required>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-
-        <button type="submit" mat-raised-button color="primary">Submit</button>
+<div class="container">
+    <h3 class="text-white mt-3">Budget of {{_title}}</h3>
+    <form class="row">
+        <div class="form-group col-md-4">
+            <label for="firstName">First Name</label>
+            <input type="number" class="form-control" id="firstName" placeholder="Enter Budget" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="lastName">Last Name</label>
+            <input type="number" class="form-control" id="lastName" placeholder="Enter Saving" required>
+        </div>
+        <div class="col-md-3">
+            <button class="btn mt-4 w-50 btn-primary btn-sm">Save Budget</button>
+        </div>
     </form>
-</div>
-
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
 </div>

@@ -1,4 +1,4 @@
-<app-month-bar/>
+<app-month-bar (monthYearChange)="onMonthYearChange($event)" />
 
 <div class="container mt-5">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -13,7 +13,7 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="budget" role="tabpanel" aria-labelledby="budget-tab">
-            <app-budget />
+            <app-budget [title]="title"/>
         </div>
         <div class="tab-pane fade show" id="expense" role="tabpanel" aria-labelledby="expense-tab">
             <app-create-expense />
