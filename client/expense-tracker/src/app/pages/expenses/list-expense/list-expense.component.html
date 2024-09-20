@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="row mt-2" *ngIf="expenses.length; else noExpense">
+  <div class="row mt-2 vertical-scroll" *ngIf="expenses.length; else noExpense">
     <div *ngFor="let expense of expenses" class="mt-3" [ngClass]="{ 'col-md-4': isCardView, 'col-md-12': !isCardView}">
       <div class="card">
         <div class="card-body">
@@ -48,6 +48,9 @@
       </div>
     </div>
   </div>
+
+  <hr class="border-line" *ngIf="expenses.length"/>
+
   <ng-template #noExpense>
     <hr class="border-line" />
     <h2 class="text-white text-center">No Expense Found!</h2>

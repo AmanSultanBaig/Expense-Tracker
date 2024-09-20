@@ -5,11 +5,11 @@
 }
 
 .active {
-    border-color: #ed1f3b !important;
-    background-color: #ed1f3b !important;
-    color: #fff !important;
-  }
-  
+  border-color: #ed1f3b !important;
+  background-color: #ed1f3b !important;
+  color: #fff !important;
+}
+
 .chip {
   background-color: #ed1f3b;
   color: #fff;
@@ -26,4 +26,34 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 250px;
+}
+
+.vertical-scroll {
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+/* Webkit Browsers (Chrome, Safari, Edge) */
+.row::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.row::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.row::-webkit-scrollbar-thumb {
+  background-color: #ed1f3b; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Roundness of the scrollbar handle */
+  border: 2px solid #f1f1f1; /* Optional border */
+}
+
+.row::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darken the handle when hovered */
+}
+
+/* Firefox */
+.row {
+  scrollbar-color: #ed1f3b #f1f1f1; /* Handle color and track color */
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
 }
