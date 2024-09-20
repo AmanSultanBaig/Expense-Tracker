@@ -14,8 +14,8 @@
   background-color: #ed1f3b;
   color: #fff;
   font-size: 10px;
-  border-radius: 100px;
-  padding: 5px;
+  border-radius: 5px;
+  padding: 8px;
   width: 110px;
   font-weight: 800;
   text-align: center;
@@ -61,5 +61,5 @@
 .delete-btn{
   background-color: #ed1f3b !important;
   border-color: #fff !important;
-  margin-left: 1rem !important;
+  margin-left: 5px !important;
 }
