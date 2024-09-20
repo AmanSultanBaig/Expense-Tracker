@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import Swal, { SweetAlertIcon } from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import Swal, { SweetAlertIcon } from 'sweetalert2';
 export class ApiService {
   private apiUrl = 'http://localhost:8088/api/v1';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   create(endpoint: string, data: any, token?: string): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
@@ -35,6 +36,11 @@ export class ApiService {
 
   getLoggedInUser() {
     return JSON.parse(localStorage.getItem('loggedIn-user') || '{}');
+  }
+
+  logout() {
+    localStorage.removeItem("loggedIn-user");
+    this.router.navigate(['/login']);
   }
 
   showToast(

@@ -19,4 +19,8 @@ export class HeaderComponent {
     this.userName = loggedInUser.name?.split(" ")[0][0];
     this.userName += loggedInUser.name?.split(" ")[1][0];
   }
+
+  logout():void {
+    this._apiService.logout()
+  }
 }
