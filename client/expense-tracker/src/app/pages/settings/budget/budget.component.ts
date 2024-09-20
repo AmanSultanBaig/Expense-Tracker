@@ -22,7 +22,9 @@ export class BudgetComponent {
   };
 
   @Input() set title(value: string) {
-    this._title = value;
+    if(value) {
+      this._title = value;
+    }
   }
 
   @Input() set year_month(value: number) {
@@ -41,24 +43,13 @@ export class BudgetComponent {
     this.data.budget = parseFloat(this.data.budget);
     this.data.saving = parseFloat(this.data.saving);
 
-    this._apiService
-      .create('/create-budget', this.data, this.loggedInUser.token)
-      .subscribe((res) => {
-        this._apiService.showToast(
-          'Success!',
-          'Budget Saved Successfully!',
-          'success',
-          'Close'
-        );
-      });
+    this._apiService.create('/create-budget', this.data, this.loggedInUser.token).subscribe((res) => {
+      this._apiService.showToast('Success!', 'Budget Saved Successfully!', 'success', 'Close');
+    });
   }
 
   getBudget() {
-    this.data.budget = parseFloat(this.data.budget);
-    this.data.saving = parseFloat(this.data.saving);
-
-    this._apiService
-      .create('/get-budget', {year_month: this.data.year_month}, this.loggedInUser.token)
+    this._apiService.create('/get-budget', {year_month: this.data.year_month}, this.loggedInUser.token)
       .subscribe((res) => {
         if(res.data && Object.keys(res.data).length) {
           this.data.budget = res.data.budget;

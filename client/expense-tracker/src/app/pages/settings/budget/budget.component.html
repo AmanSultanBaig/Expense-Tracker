@@ -8,7 +8,7 @@
             <input type="number" name="saving" [(ngModel)]="data.saving" class="form-control" placeholder="Enter Saving" required />
         </div>
         <div class="col-md-3">
-            <button (click)="saveBudget()" class="btn w-50 btn-primary btn-sm">Save Budget</button>
+            <button [disabled]="!data.budget || !data.saving" (click)="saveBudget()" class="btn w-50 btn-primary btn-sm">Save Budget</button>
         </div>
     </form>
 </div>
