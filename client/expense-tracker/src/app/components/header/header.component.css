@@ -108,3 +108,7 @@
 .profile-menu:hover .dropdown-content {
   display: block;
 }
+
+.navbar-logo {
+  cursor: pointer !important;
+}

@@ -1,11 +1,11 @@
 <nav class="navbar mb-3">
-    <img src="assets/images/navbar-logo.png" height="50" alt="Logo" class="navbar-logo">
+    <img routerLink="/expense-list" src="assets/images/navbar-logo.png" height="50" alt="Logo" class="navbar-logo">
     <h2 class="text-center logo-font-family">Expense Tracking System</h2>
     <div class="profile-menu">
         <h6 class="loggedInProfile">{{userName | uppercase}}</h6>
         <div class="dropdown-content">
             <a href="#">Profile</a>
-            <a href="#">Settings</a>
+            <a href="javascript:void();" routerLink="/settings">Settings</a>
             <a href="#">Logout</a>
         </div>
     </div>

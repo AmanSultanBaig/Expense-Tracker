@@ -1,0 +1,22 @@
+<app-month-bar/>
+
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="budget-tab" data-toggle="tab" href="#budget" role="tab"
+                aria-controls="budget" aria-selected="true">Budget</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="expense-tab" data-toggle="tab" href="#expense" role="tab" aria-controls="expense"
+                aria-selected="false">Create Expense</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="budget" role="tabpanel" aria-labelledby="budget-tab">
+            <app-budget />
+        </div>
+        <div class="tab-pane fade show" id="expense" role="tabpanel" aria-labelledby="expense-tab">
+            <app-create-expense />
+        </div>
+    </div>
+</div>

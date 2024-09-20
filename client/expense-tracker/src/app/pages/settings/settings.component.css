@@ -1,0 +1,13 @@
+.nav-link {
+    color: white !important;
+}
+
+.nav-item .active {
+    border-color: #ed1f3b !important;
+    background-color: #ed1f3b !important;
+    color: white !important
+}
+
+.nav {
+    border-bottom: solid 1px  #ed1f3b !important;
+}

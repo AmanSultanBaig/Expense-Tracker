@@ -1,1 +1,33 @@
-<p>budget works!</p>
+<div class="container mt-5">
+    <h2>Simple Form</h2>
+    <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="firstName" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="lastName" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Select Date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" name="date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

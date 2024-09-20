@@ -6,7 +6,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ListExpenseComponent } from './pages/expenses/list-expense/list-expense.component';
-import { CreateExpenseComponent } from './pages/expenses/create-expense/create-expense.component';
+import { CreateExpenseComponent } from './pages/settings/create-expense/create-expense.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'expense-list', component: ListExpenseComponent },
   { path: 'register', component: CreateExpenseComponent },
+  { path: 'settings', component: SettingsComponent },
 ];
 
 bootstrapApplication(AppComponent, {
